@@ -1,9 +1,7 @@
-.element { ... }
-.element-avatar { ... }
-.element-selected { ... }
+.element {
+  margin: 0;
 
-@media (min-width: 480px) {
-  .element { ...}
-  .element-avatar { ... }
-  .element-selected { ... }
+  @media (min-width: 480px) {
+    margin: 5rem 0;
+  }
 }

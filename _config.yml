@@ -1,7 +1,7 @@
-name:          Codeguide von @mdo
+name:          Codeguide von
 description:   Richtlinien zur Entwicklung von flexiblem, wartbarem und best&auml;ndigem HTML und CSS.
 url:           http://BackendButters.github.io/code-guide/
 
 markdown:      rdiscount
 permalink:     pretty
-pygments:      true
+highlight:     false

@@ -17,45 +17,23 @@ layout: default
       <li><a href="#html-ie-compatibility-mode">Internet Explorer Kompatibilit&auml;tsmodus</a></li>
       <li><a href="#html-style-script">CSS und JavaScript includes</a></li>
       <li><a href="#html-practicality">Praktisch vor Rein</a></li>
-      <li><a href="#html-attribute-order">Attributreihenfolge</a></li>
-      <li><a href="#html-boolean-attributes">Boolesche Attribute</a></li>
-      <li><a href="#html-reducing-markup">Reduzierung des Markup</a></li>
-      <li><a href="#html-javascript">JavaScript generiertes Markup</a></li>
+      <li><a href="#html-starter">HTML Starter</a></li>
     </ul>
   </div>
   <div class="col">
-    <h4><a href="#css">CSS</a></h4>
+    <h4><a href="#less">LESS</a></h4>
     <ul>
-      <li><a href="#css-syntax">CSS syntax</a></li>
-      <li><a href="#css-declaration-order">Reihenfolge der Deklarationen</a></li>
-      <li><a href="#css-import">Vermeide @import</a></li>
+      <li><a href="#css-syntax">LESS syntax</a></li>
       <li><a href="#css-media-queries">Platzierung von Medienabfragen</a></li>
-      <li><a href="#css-prefixed-properties">Vorbestimmte Eigenschaften</a></li>
       <li><a href="#css-single-declarations">Einfache Deklarationen</a></li>
       <li><a href="#css-shorthand">Kurznotation</a></li>
       <li><a href="#css-nesting">Verschachtelung in Less und Sass</a></li>
-      <li><a href="#css-comments">Kommentare</a></li>
       <li><a href="#css-classes">Klassen</a></li>
       <li><a href="#css-selectors">Selektoren</a></li>
-      <li><a href="#css-organization">Aufbau</a></li>
+      <li><a href="#css-organization">Aufbau TBD</a></li>
     </ul>
   </div>
 </div>
-
-
-<div class="section" id="golden-rule">
-  <div class="col">
-    <h2>Goldene Regel</h2>
-    <p>Halte dich immer an definierte Regeln - seien es diese, oder eigene. Gro&szlig;e oder kleine Fehler - melde dich, wenn du Unstimmigkeiten gefunden hast. Um Beitr&auml;ge zu diesem Styleguide zu liefern, &ouml;ffne bitte ein Issue auf <a href="https://github.com/mdo/code-guide/issues/new">GitHub</a>.</p>
-  </div>
-  <div class="col">
-    <blockquote>
-      <p>Jede Zeile Code sollte so aussehen, als wenn sie von einer Person geschrieben wurde, egal, wieviele wirklich daran gearbeitet haben.</p>
-    </blockquote>
-  </div>
-</div>
-
-
 
 <div class="heading" id="html">
   <h2>HTML</h2>
@@ -65,8 +43,7 @@ layout: default
   <div class="col">
     <h3>Syntax</h3>
     <ul>
-      <li>Benutze Soft-Tabs mit 2 Leerzeichen - es ist die einzige M&ouml;glichkeit zu garantieren, dass der Code in allen Umgebungen gleich gerendert wird.</li>
-      <li>Verschachtelte Elemente sollten einfach einger&uuml;ckt werden (mit 2 Leerzeichen).</li>
+      <li>Verschachtelte Elemente sollten einfach einger&uuml;ckt werden (gemäss Vorgabe von <code>.editorconfig</code>)</li>
       <li>Verwende Anf&uuml;hrungszeichen f&uuml;r Attribute, keine Apostrophe.</li>
       <li>Benutze keine abschlie&szlig;enden Schr&auml;gstriche in selbstschlie&szlig;enden Elementen - die <a href="http://dev.w3.org/html5/spec-author-view/syntax.html#syntax-start-tag">HTML5 Spezifikationen</a> besagen, dass sie optional sind.</li>
       <li>Lasse keine schlie&szlig;enden Tags weg (z.B. <code>&lt;/li&gt;</code> oder <code>&lt;/body&gt;</code>).</li>
@@ -94,7 +71,6 @@ layout: default
     <blockquote>
       <p>Autoren wird empfohlen, ein Sprachattribut im Root-HTML Tag anzugeben, um die Sprache des Dokuments bekanntzumachen. Es hilft Sprachausgabetools die richtige Aussprache zu w&auml;hlen, &Uuml;bersetzungstools die richtigen Regeln zu verwenden, usw.</p>
     </blockquote>
-    <p>Weitere Informationen &uuml;ber das <code>lang</code> Attribut finden sich <a href="http://www.w3.org/html/wg/drafts/html/master/semantics.html#the-html-element">in den Spezifikationen</a>.</p>
     <p>Auf Sitepoint findet sich eine <a href="http://reference.sitepoint.com/html/lang-codes">Liste der Sprachcodes</a>.</p>
   </div>
   <div class="col">
@@ -127,6 +103,7 @@ layout: default
   <div class="col">
     <h3>CSS und JavaScript includes</h3>
     <p>Nach den HTML5 Spezifikationen ist es nicht notwendig, einen <code>type</code> anzugeben, da CSS und JavaScript Dateien per Voreinstellung als <code>text/css</code> und <code>text/javascript</code> erwartet werden.</p>
+    <p>Vermeide wenn möglich Inline CSS.</p>
     <h4>HTML5 Spezifikation links</h4>
     <ul>
       <li><a href="http://www.w3.org/TR/2011/WD-html5-20110525/semantics.html#the-link-element">Benutzung von link</a></li>
@@ -139,6 +116,17 @@ layout: default
   </div>
 </div>
 
+<div class="section" id="html-starter">
+  <div class="col-full">
+    <h3>HTML Starter</h3>
+    <p>Rechts findest du ein kleines Code Snippet für den Start. Das Snippet ist eine Zusammenfassung aus den oben genannten Empfehlungen und an das <a href="https://html5boilerplate.com/">HTML5 Boilerplate</a> angelehnt.</p>
+
+  </div>
+  <div class="col-full">
+    {% highlight html %}{% include html/html-starter.html %}{% endhighlight %}
+  </div>
+</div>
+
 <div class="section" id="html-practicality">
   <div class="col">
     <h3>Praktisch vor Rein</h3>
@@ -146,65 +134,8 @@ layout: default
   </div>
 </div>
 
-<div class="section" id="html-attribute-order">
-  <div class="col">
-    <h3>Attributreihenfolge</h3>
-    <p>HTML Attribute sollten in der folgenden Ordnung erscheinen, um die Leserlichkeit zu erleichtern.</p>
-    <ul>
-      <li><code>class</code></li>
-      <li><code>id</code>, <code>name</code></li>
-      <li><code>data-*</code></li>
-      <li><code>src</code>, <code>for</code>, <code>type</code>, <code>href</code></li>
-      <li><code>title</code>, <code>alt</code></li>
-      <li><code>aria-*</code>, <code>role</code></li>
-    </ul>
-    <p>Klassen beinhalten wiederverwendbare Komponenten, also kommen sie zuerst. IDs sind eher spezifisch und sollten seltener verwendet werden (z.B. f&uuml;r seiteninterne Lesezeichen), also kommen sie als zweites.</p>
-  </div>
-  <div class="col">
-    {% highlight html %}{% include html/attribute-order.html %}{% endhighlight %}
-  </div>
-</div>
-
-<div class="section" id="html-boolean-attributes">
-  <div class="col">
-    <h3>Boolesche Attribute</h3>
-    <p>Ein boolesches Attribute braucht keinen Wert. XHTML verlangt einen gegebenen Wert, aber HTML5 ben&ouml;tigt es nicht.</p>
-    <p>Weitere Informationen finden sich im <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/common-microsyntaxes.html#boolean-attributes">WhatWG Abschnitt f&uuml;r boolesche Attribute</a>:</p>
-    <blockquote>
-      <p>Die Anwesenheit eines booleschen Attributes an einem Element symbolisiert den Wahr-Wert, die Abwesenheit des Attributs den Falsch-Wert.</p>
-    </blockquote>
-    <p>Wenn der Wert des Attributs angegeben werden <em>muss</em>, obwohl es eigentlich <strong>nicht notwendig ist</strong>, folge diesem WhatWG Leitsatz:</p>
-    <blockquote>
-      <p>Wenn das Attribut vorhanden ist, muss sein Wert entweder ein leerer String oder [...] der kanonische Name des Attributs ohne f&uuml;hrendes oder nachgestelltes Leerzeichen sein.</p>
-    </blockquote>
-    <p><strong>Kurzgefasst: F&uuml;ge keinen Wert hinzu.</strong></p>
-  </div>
-  <div class="col">
-    {% highlight html %}{% include html/boolean-attributes.html %}{% endhighlight %}
-  </div>
-</div>
-
-<div class="section" id="html-reducing-markup">
-  <div class="col">
-    <h3>Reduzierung des Markup</h3>
-    <p>Wenn m&ouml;glich, vermeide &uuml;berfl&uuml;ssige Elternelemente beim Schreiben von HTML. Oft sind hierf&uuml;r Code-Iterationen und Refactoring notwendig, aber letzendlich wird weniger HTML produziert, wie das Beispiel zeigt:</p>
-  </div>
-  <div class="col">
-    {% highlight html %}{% include html/reducing-markup.html %}{% endhighlight %}
-  </div>
-</div>
-
-<div class="section" id="html-javascript">
-  <div class="col">
-    <h3>JavaScript generiertes Markup</h3>
-    <p>Das Schreiben von Markup in JavaScript macht den Inhalt schwerer zu finden, schwerer zu editieren und weniger performant. Vermeide dies, wo m&ouml;glich.</p>
-  </div>
-</div>
-
-
-
-<div class="heading" id="css">
-  <h2>CSS</h2>
+<div class="heading" id="less">
+  <h2>LESS</h2>
 </div>
 
 <div class="section" id="css-syntax">
@@ -219,10 +150,9 @@ layout: default
       <li>F&uuml;r ein genaueres Fehlerreporting sollte jede Deklaration in einer eigenen Zeile stehen.</li>
       <li>Beende jede Deklaration mit einem Semikolon. F&uuml;r die letzte Deklaration ist dies optional, aber ohne ist der Code fehleranf&auml;lliger.</li>
       <li>Kommagetrennte Eigenschaftswerte sollten ein Leerzeichen nach jedem Komma enthalten (z.B.<code>box-shadow</code>).</li>
-      <li>F&uuml;ge keine Kommata <em>innerhalb</em> <code>rgb()</code>, <code>rgba()</code>, <code>hsl()</code>, <code>hsla()</code>, oder <code>rect()</code> Werten hinzu. Es hilft, verschiedene Farbwerte (Komma, kein Leerzeichen) von verschiedenen Eigenschaftswerten (Komma, mit Leerzeichen) zu unterscheiden.</li>
-      <li>F&uuml;ge Eigenschaftswerten oder Farbwerten keine f&uuml;hrenden Nullen hinzu (z.B., <code>.5</code> anstatt <code>0.5</code> und <code>-.5px</code> anstatt <code>-0.5px</code>).</li>
-      <li>Schreibe Hexwerte klein, z.B. <code>#fff</code>. Kleingeschriebene Buchstaben sind beim Lesen eines Dokumentes einfacher zu unterscheiden, da sie mehr einzigartige Formen aufweisen.</li>
-      <li>Verwende kurze Hexwerte, wenn m&ouml;glich. Z.B. <code>#fff</code> anstatt <code>#ffffff</code>.</li>
+      <li>F&uuml;ge Eigenschaftswerten oder Farbwerten f&uuml;hrenden Nullen hinzu (z.B., <code>0.5</code> anstatt <code>.5</code> und <code>-0.5px</code> anstatt <code>-.5px</code>).</li>
+      <li>Schreibe Hexwerte klein, z.B. <code>#ffffff</code>. Kleingeschriebene Buchstaben sind beim Lesen eines Dokumentes einfacher zu unterscheiden, da sie mehr einzigartige Formen aufweisen.</li>
+      <li>Verwende ausgeschriebene Hexwerte, wenn m&ouml;glich. Z.B. <code>#ffffff</code> anstatt <code>#fff</code>.</li>
       <li>Setze Attributwerte in Anf&uuml;hrungszeichen, z.B. <code>input[type="text"]</code>. <a href="http://mathiasbynens.be/notes/unquoted-attribute-values#css">Sie sind nur in einigen F&auml;llen optional</a> und es ist eine Gew&ouml;hnung an Konsistenz.</li>
       <li>Vermeide das Setzen von Einheiten f&uuml;r Nullwerte, z.B. <code>margin: 0;</code> anstatt <code>margin: 0px;</code>.</li>
     </ul>
@@ -233,44 +163,9 @@ layout: default
   </div>
 </div>
 
-<div class="section" id="css-declaration-order">
-  <div class="col">
-    <h3>Reihenfolge der Deklarationen</h3>
-    <p>Verbundene Eigenschaftsdeklarationen sollten in der folgenden Reihenfolge gruppiert werden:</p>
-    <ol>
-      <li>Positionierung</li>
-      <li>Box Modell</li>
-      <li>Typographie</li>
-      <li>Aussehen</li>
-    </ol>
-    <p>Positionierung kommt an erster Stelle, da es ein Element aus der normalen Verarbeitung eines Dokuments entfernen kann und Box Modell Styles &uuml;berschreiben kann. Das Box Modell kommt als n&auml;chstes, da es die Gr&ouml;&szlig;e und Platzierung der Komponente bestimmt.</p>
-    <p>Alles andere kommt hinterher, da es die Komponente im Inneren gestaltet, ohne die vorherigen beiden Sektionen zu beeinflussen</p>
-    <p>Eine komplette Liste der Eigenschaften und ihrer Reihenfolge kann bei <a href="http://twitter.github.com/recess">Recess</a> gefunden werden.</p>
-  </div>
-  <div class="col">
-    {% highlight css %}{% include css/declaration-order.css %}{% endhighlight %}
-  </div>
-</div>
-
-<div class="section" id="css-import">
-  <div class="col">
-    <h3>Vermeide <code>@import</code></h3>
-    <p>Verglichen mit <code>&lt;link&gt;</code>s ist <code>@import</code> langsamer, f&uuml;hrt zu mehr Seitenanforderungen und kann andere unvorhergesehene Probleme verursachen. Vermeide es und benutze stattdessen andere Ans&auml;tze:</p>
-    <ul>
-      <li>Benutze mehrere <code>&lt;link&gt;</code> Elemente</li>
-      <li>Kompiliere das CSS mit einem Pr&auml;prozessor wie Sass oder Less in eine einzige Datei</li>
-      <li>Verbinde die CSS Dateien mit Tools, die von Rails, Jekyll oder anderen Umgebungen bereitgestellt werden</li>
-    </ul>
-    <p>Weitere Informationen finden sich in einem <a href="http://www.stevesouders.com/blog/2009/04/09/dont-use-import/">Artikel von Steve Souders</a>.</p>
-  </div>
-  <div class="col">
-    {% highlight html %}{% include css/import.html %}{% endhighlight %}
-  </div>
-</div>
-
 <div class="section" id="css-media-queries">
   <div class="col">
-    <h3>Platzierung von Medienabfragen</h3>
+    <h3>Platzierung von Media Queries</h3>
     <p>Medienabfragen sollten so nahe wie m&ouml;glich an den f&uuml;r sie relevanten Regeln platziert werden. B&uuml;ndle sie nicht alle in einem separaten Stylesheet oder am Ende des Dokuments, andernfalls ist es einfach f&uuml;r andere, sie in Zukunft zu &uuml;bersehen. Hier ist eine typische Deklaration.</p>
   </div>
   <div class="col">
@@ -278,21 +173,12 @@ layout: default
   </div>
 </div>
 
-<div class="section" id="css-prefixed-properties">
-  <div class="col">
-    <h3>Vorbestimmte Eigenschaften</h3>
-    <p>Wenn herstellervorbestimmte Eigenschaften verwendet werden, r&uuml;cke jede Eigenschaft so ein, dass die Deklarationswerte genau untereinander stehen, damit sie einfach bearbeitet werden k&ouml;nnen.</p>
-    <p>In Textmate, dr&uuml;cke <strong>Text &rarr; Edit Each Line in Selection</strong> (&#8963;&#8984;A). In Sublime Text 2, dr&uuml;cke <strong>Selection &rarr; Add Previous Line</strong> (&#8963;&#8679;&uarr;) und <strong>Selection &rarr;  Add Next Line</strong> (&#8963;&#8679;&darr;).</p>
-  </div>
-  <div class="col">
-    {% highlight css %}{% include css/prefixed-properties.css %}{% endhighlight %}
-  </div>
-</div>
-
 <div class="section" id="css-single-declarations">
   <div class="col">
     <h3>Einfache Deklarationen</h3>
-    <p>In F&auml;llen, in denen ein Regelsatz <strong>nur eine einzige Deklaration</strong> enth&auml;lt, sollte der Zeilenumbruch f&uuml;r leichtere Lesbarkeit und schnelleres Editieren entfernt werden.</p>
+    <p>
+      Jede Deklaration erhält eine neue Zeile.
+    </p>
     <p>Der Punkt ist hier Fehlererkennung - z.B. ein CSS Validator, der aussagt, dass ein Syntax Error in Zeile 183 vorliegt. Mit einer einzigen Deklaration kann man ihn nicht verfehlen. Bei vielen Deklarationen sind separate Zeilen ein Muss.</p>
   </div>
   <div class="col">
@@ -330,27 +216,17 @@ layout: default
   </div>
 </div>
 
-<div class="section" id="css-comments">
-  <div class="col">
-    <h3>Kommentare</h3>
-    <p>Der Code wird von Menschen geschrieben und gepflegt. Stelle sicher, dass dein Code anschaulich, gut kommentiert und f&uuml;r andere zug&auml;nglich ist. Gute Kommentare vermitteln Kontext oder Zweck. Wiederhole nicht einfach den Komponenten- oder Klassennamen.</p>
-    <p>Stelle sicher, dass in l&auml;ngeren Kommentaren komplette S&auml;tze geschrieben werden und k&uuml;rze S&auml;tze in generellen Anmerkungen.</p>
-  </div>
-  <div class="col">
-    {% highlight css %}{% include css/comments.css %}{% endhighlight %}
-  </div>
-</div>
-
 <div class="section" id="css-classes">
   <div class="col">
     <h3>Klassennamen</h3>
     <ul>
       <li>Schreibe Klassennamen in Kleinbuchstaben und benutze Bindestriche (keine Unterstriche oder camelCase). Bindestriche dienen als nat&uuml;rliche Unterbrechungen in verbundenen Klassen (z.B. <code>.btn</code> und <code>.btn-danger</code>).</li>
+      <li>
+        Klassennamen werden immer Englisch ausgegeben.
+      </li>
       <li>Vermeide ausschweifende und beliebige Kurznotationen. <code>.btn</code> ist eine n&uuml;tzliche Abk&uuml;rzung f&uuml;r <em>button</em>, aber <code>.s</code> ist bedeutungslos.</li>
       <li>Benenne Klassen so kurz und b&uuml;ndig wie m&ouml;glich.</li>
       <li>Benutze aussagekr&auml;ftige Namen; benutze zweck- oder strukturgebundene Namen, anstatt toll klingende.</li>
-      <li>W&auml;hle ein Klassenpr&auml;fix, das auf die n&auml;chsten Eltern oder Basisklasse verweist.</li>
-      <li>Benutze <code>.js-*</code> Klassen, um Verhalten anzudeuten (im Gegensatz zu einem Style), aber halte diese Klassen aus dem CSS heraus.</li>
     </ul>
     <p>Au&szlig;erdem ist es hilfreich, viele dieser Regeln beizubehalten, wenn Sass und Less Variablennamen erstellt werden.</p>
   </div>
@@ -381,7 +257,7 @@ layout: default
 
 <div class="section" id="css-organization">
   <div class="col">
-    <h3>Aufbau</h3>
+    <h3>Aufbau TBD</h3>
     <ul>
       <li>Ordne Codesektionen nach Komponenten an.</li>
       <li>Entwickle eine konsistente Kommentierungshierarchie.</li>
