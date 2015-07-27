@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+    <title>
+      Codeguide von Guave Interactive
+    </title>
+
+    <link rel="stylesheet" href="code-guide.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|PT+Mono&subset=latin,cyrillic">
+
+  <body>
+
+    <header class="masthead">
+    <div class="container">
+        <h1>Codeguide von</h1>
+        <p class="masthead-links">
+            <svg version="1.1" baseProfile="tiny" id="guavelogo" preserveAspectRatio="xMinYMid meet"
+                 viewBox="0 0 960 87" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+                 xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g>
+                    <g>
+                        <g class="addition">
+                            <g>
+                                <path d="M430.111,7.902v68.626h-4.888V7.902H430.111z"></path>
+                                <path d="M446.809,76.528V7.902h4.579l26.678,40.525c5.6,8.553,9.572,14.967,12.932,21.585l0.203-0.104
+                                        c-0.713-9.266-0.815-17.104-0.815-27.795V7.901h4.685v68.626h-4.478l-26.171-39.913c-5.088-7.839-9.772-15.069-13.338-22.196
+                                        l-0.203,0.104c0.51,8.451,0.611,15.882,0.611,27.285v34.72L446.809,76.528L446.809,76.528z"></path>
+                                <path
+                                  d="M526.729,11.976h-22.399V7.902h49.688v4.073h-22.4v64.552h-4.886V11.976H526.729z"></path>
+                                <path
+                                  d="M596.369,42.42h-27.388v30.037h30.646v4.07h-35.535V7.902h33.905v4.073h-29.017v26.37h27.388V42.42L596.369,42.42z"></path>
+                                <path d="M613.571,8.818c4.274-0.917,10.082-1.426,14.863-1.426c8.967,0,14.661,1.936,18.534,5.701
+                                        c2.954,2.853,4.783,7.435,4.783,12.217c0,9.268-5.496,15.172-13.438,17.921v0.203c5.496,1.733,8.961,6.924,10.59,14.56
+                                        c2.342,10.694,3.666,15.782,5.09,18.533h-4.988c-1.122-2.039-2.546-8.043-4.375-16.699c-2.141-9.878-6.414-14.355-15.479-14.761
+                                        h-10.69v31.46h-4.888L613.571,8.818L613.571,8.818z M618.458,41.094h10.896c10.591,0,17.516-5.903,17.516-14.967
+                                        c0-10.486-7.737-14.763-18.534-14.763c-4.681,0-8.145,0.509-9.875,0.914L618.458,41.094L618.458,41.094z"></path>
+                                <path d="M674.251,52.5l-8.45,24.028h-4.989l24.846-68.626h4.681l24.744,68.626h-4.988L701.439,52.5H674.251z M699.906,48.426
+                                        l-8.348-22.907c-1.632-4.788-2.549-8.249-3.565-12.117h-0.206c-1.018,3.97-2.139,7.533-3.563,11.911l-8.452,23.113H699.906z"></path>
+                                <path d="M771.178,74.084c-3.464,1.731-10.08,3.465-18.533,3.465c-16.598,0-32.48-10.59-32.48-34.926
+                                        c0-20.359,13.134-35.734,34.818-35.734c8.759,0,13.848,1.936,15.887,2.955l-1.529,4.072c-3.464-1.733-8.448-2.955-14.255-2.955
+                                        c-18.531,0-29.83,12.016-29.83,31.765c0,18.635,10.589,30.648,29.015,30.648c5.805,0,11.506-1.223,15.479-3.156L771.178,74.084z
+                                        "></path>
+                                <path
+                                  d="M800.597,11.976h-22.399V7.902h49.686v4.073h-22.397v64.552h-4.888L800.597,11.976L800.597,11.976z"></path>
+                                <path d="M843.866,7.902v68.626h-4.885V7.902H843.866z"></path>
+                                <path d="M878.076,76.528L855.27,7.902h5.092l12.111,36.758c3.264,9.979,6.108,18.633,8.043,26.269h0.31
+                                        c2.036-7.737,5.189-16.597,8.756-26.269l13.341-36.758h5.19L882.66,76.528H878.076z"></path>
+                                <path d="M948.633,42.42h-27.385v30.037h30.646v4.07h-35.535V7.902h33.906v4.073h-29.019v26.37h27.385L948.633,42.42
+                                        L948.633,42.42z"></path>
+                            </g>
+                        </g>
+                        <g class="guave">
+                            <path d="M155.642,74.592c-4.378,1.632-12.931,3.868-21.993,3.868c-11.605,0-20.463-2.954-26.979-9.164
+                                    c-6.111-5.803-9.572-14.864-9.572-25.255C97.2,22.258,112.575,8.409,135.281,8.409c8.448,0,15.069,1.732,18.224,3.261
+                                    l-2.75,10.08c-3.767-1.734-8.346-2.953-15.576-2.953c-14.663,0-24.946,8.652-24.946,24.638c0,15.578,9.572,24.846,23.825,24.846
+                                    c4.582,0,7.841-0.61,9.47-1.326V49.75H131.41v-9.875h24.233L155.642,74.592L155.642,74.592z"></path>
+                            <path d="M180.888,9.125v40.016c0,13.438,5.599,19.648,14.049,19.648c9.062,0,14.457-6.212,14.457-19.648V9.125h12.522v39.199
+                                    c0,21.178-10.893,30.547-27.387,30.547c-15.884,0-26.167-8.858-26.167-30.445V9.125H180.888z"></path>
+                            <path d="M244.721,58.301l-5.905,19.446h-12.93l21.993-68.626h15.984l22.298,68.626h-13.542l-6.21-19.446H244.721L244.721,58.301z
+                                     M264.373,48.836l-5.397-16.904c-1.323-4.174-2.444-8.856-3.461-12.826h-0.204c-1.019,3.97-2.138,8.755-3.257,12.826
+                                    l-5.295,16.904H264.373z"></path>
+                            <path d="M305.601,77.751L283.407,9.125h13.642l9.371,31.26c2.646,8.652,4.987,16.597,6.717,24.944h0.204
+                                    c1.833-8.146,4.377-16.493,7.026-24.845l9.978-31.359h13.338L319.96,77.75L305.601,77.751L305.601,77.751z"></path>
+                            <path d="M389.494,47.305h-25.862v20.161h28.917V77.75H351.11V9.125h39.914v10.284h-27.39v17.718h25.862L389.494,47.305
+                                    L389.494,47.305z"></path>
+                        </g>
+                        <g class="sign">
+                            <g>
+                                <path d="M44.974,15.795c5.22,0,10.086,1.461,14.258,3.965l8.413-4.652c-6.225-4.954-14.099-7.921-22.671-7.921
+                                        C24.832,7.187,8.508,23.51,8.508,43.65c0,1.368,0.092,2.71,0.249,4.038l8.377-4.638C17.456,27.942,29.792,15.795,44.974,15.795z
+                                        "></path>
+                            </g>
+                            <g>
+                                <path d="M70.933,18.32l-7.628,4.367L17.61,48.834l-7.802,4.465c1.122,4.104,2.942,7.91,5.324,11.301
+                                        c1.142,1.542,2.416,3.032,3.86,4.459c1.263,1.265,2.581,2.417,3.957,3.464c3.683,2.855,7.751,4.835,12.094,5.991l4.499-7.54
+                                        l26.899-45.065L70.933,18.32z"></path>
+                                <path d="M74.1,21.748l-4.833,8.338c2.251,4.016,3.561,8.629,3.561,13.562c0,15.256-12.271,27.639-27.483,27.839l-4.855,8.339
+                                        c1.47,0.186,2.963,0.286,4.485,0.286c20.137,0,36.464-16.323,36.464-36.464C81.438,35.42,78.698,27.846,74.1,21.748z"></path>
+                                <path d="M74.1,21.748c-0.007-0.012-0.012-0.02-0.02-0.027"></path>
+                                <path d="M69.248,30.047"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+        </p>
+
+        <p class="lead">Richtlinien zur Entwicklung von flexiblem, wartbarem und best&auml;ndigem HTML und CSS.</p>
+    </div>
+</header>
+
+
+    <div class="heading" id="toc">
+  <h2>Inhaltsverzeichnis</h2>
+</div>
+<div class="section toc">
+  <div class="col">
+    <h4><a href="#html">HTML</a></h4>
+    <ul>
+      <li><a href="#html-syntax">Syntax</a></li>
+      <li><a href="#html-doctype">HTML5 doctype</a></li>
+      <li><a href="#html-lang">Language Attribut</a></li>
+      <li><a href="#html-encoding">Zeichenkodierung</a></li>
+      <li><a href="#html-ie-compatibility-mode">Internet Explorer Kompatibilit&auml;tsmodus</a></li>
+      <li><a href="#html-style-script">CSS und JavaScript includes</a></li>
+      <li><a href="#html-practicality">Praktisch vor Rein</a></li>
+      <li><a href="#html-starter">HTML Starter</a></li>
+    </ul>
+  </div>
+  <div class="col">
+    <h4><a href="#less">LESS</a></h4>
+    <ul>
+      <li><a href="#css-syntax">LESS syntax</a></li>
+      <li><a href="#css-media-queries">Platzierung von Medienabfragen</a></li>
+      <li><a href="#css-single-declarations">Einfache Deklarationen</a></li>
+      <li><a href="#css-shorthand">Kurznotation</a></li>
+      <li><a href="#css-nesting">Verschachtelung in Less und Sass</a></li>
+      <li><a href="#css-classes">Klassen</a></li>
+      <li><a href="#css-selectors">Selektoren</a></li>
+      <li><a href="#css-organization">Aufbau TBD</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="heading" id="html">
+  <h2>HTML</h2>
+</div>
+
+<div class="section" id="html-syntax">
+  <div class="col">
+    <h3>Syntax</h3>
+    <ul>
+      <li>Verschachtelte Elemente sollten einfach einger&uuml;ckt werden (gemäss Vorgabe von <code>.editorconfig</code>)</li>
+      <li>Verwende Anf&uuml;hrungszeichen f&uuml;r Attribute, keine Apostrophe.</li>
+      <li>Benutze keine abschlie&szlig;enden Schr&auml;gstriche in selbstschlie&szlig;enden Elementen - die <a href="http://dev.w3.org/html5/spec-author-view/syntax.html#syntax-start-tag">HTML5 Spezifikationen</a> besagen, dass sie optional sind.</li>
+      <li>Lasse keine schlie&szlig;enden Tags weg (z.B. <code>&lt;/li&gt;</code> oder <code>&lt;/body&gt;</code>).</li>
+    </ul>
+  </div>
+  <div class="col">
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Seitentitel<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;figure&gt;</span>
+      <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;images/company-logo.png&quot;</span> <span class="na">alt=</span><span class="s">&quot;Company&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/figure&gt;</span>
+    <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">&quot;hello-world&quot;</span><span class="nt">&gt;</span>Hello, world!<span class="nt">&lt;/h1&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span></code></pre></div>
+  </div>
+</div>
+
+<div class="section" id="html-doctype">
+  <div class="col">
+    <h3>HTML5 Doctype</h3>
+    <p>Aktiviere den Standardmodus und konsistenteres Rendering in allen Browsern, indem der Doctype am Beginn jeder HTML Seite angegeben wird.</p>
+  </div>
+  <div class="col">
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;/html&gt;</span></code></pre></div>
+  </div>
+</div>
+
+<div class="section" id="html-lang">
+  <div class="col">
+    <h3>Sprachattribut</h3>
+    <p>Aus der HTML5 Spezifikation:</p>
+    <blockquote>
+      <p>Autoren wird empfohlen, ein Sprachattribut im Root-HTML Tag anzugeben, um die Sprache des Dokuments bekanntzumachen. Es hilft Sprachausgabetools die richtige Aussprache zu w&auml;hlen, &Uuml;bersetzungstools die richtigen Regeln zu verwenden, usw.</p>
+    </blockquote>
+    <p>Auf Sitepoint findet sich eine <a href="http://reference.sitepoint.com/html/lang-codes">Liste der Sprachcodes</a>.</p>
+  </div>
+  <div class="col">
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">&quot;de-de&quot;</span><span class="nt">&gt;</span>
+  <span class="c">&lt;!-- ... --&gt;</span>
+<span class="nt">&lt;/html&gt;</span></code></pre></div>
+  </div>
+</div>
+
+<div class="section" id="html-ie-compatibility-mode">
+  <div class="col">
+    <h3>IE Kompatibilit&auml;tsmodus</h3>
+    <p>Der Internet Explorer unterst&uuml;tzt einen Kompatibilit&auml;tsmodus durch den <code>&lt;meta&gt;</code> Tag, um anzugeben, unter welcher IE Version die Seite gerendert werden soll. Sofern es andere Umst&auml;nde nicht verlangen, sollte immer die modernste Version gew&auml;hlt werden, indem der <strong>Edge Modus</strong> verwendet wird.</p>
+    <p>Weitere Informationen h&auml;lt dieser hervorragende <a href="http://stackoverflow.com/questions/6771258/whats-the-difference-if-meta-http-equiv-x-ua-compatible-content-ie-edge-e"> Stack Overflow Artikel</a> bereit.</p>
+  </div>
+  <div class="col">
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">&quot;X-UA-Compatible&quot;</span> <span class="na">content=</span><span class="s">&quot;IE=Edge&quot;</span><span class="nt">&gt;</span></code></pre></div>
+  </div>
+</div>
+
+<div class="section" id="html-encoding">
+  <div class="col">
+    <h3>Zeichenkodierung</h3>
+    <p>Das richtige Rendering des Inhalts kann schnell und einfach mit einer expliziten Zeichenkodierung festgelegt werden. Wenn die Zeichenkoderung auf diese Art gesetzt wurde, kann auf die einzelne Deklaration in HTML Elementen verzeichtet werden, sofern sie mit der des Dokumentes &uuml;bereinstimmen (normalerweise UTF-8).</p>
+  </div>
+  <div class="col">
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span></code></pre></div>
+  </div>
+</div>
+
+<div class="section" id="html-style-script">
+  <div class="col">
+    <h3>CSS und JavaScript includes</h3>
+    <p>Nach den HTML5 Spezifikationen ist es nicht notwendig, einen <code>type</code> anzugeben, da CSS und JavaScript Dateien per Voreinstellung als <code>text/css</code> und <code>text/javascript</code> erwartet werden.</p>
+    <p>Vermeide wenn möglich Inline CSS.</p>
+    <h4>HTML5 Spezifikation links</h4>
+    <ul>
+      <li><a href="http://www.w3.org/TR/2011/WD-html5-20110525/semantics.html#the-link-element">Benutzung von link</a></li>
+      <li><a href="http://www.w3.org/TR/2011/WD-html5-20110525/semantics.html#the-style-element">Benutzung von style</a></li>
+      <li><a href="http://www.w3.org/TR/2011/WD-html5-20110525/scripting-1.html#the-script-element">Benutzung von script</a></li>
+    </ul>
+  </div>
+  <div class="col">
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Externes CSS --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;code-guide.css&quot;</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- In-Dokument CSS --&gt;</span>
+<span class="nt">&lt;style&gt;</span>
+  <span class="c">/* ... */</span>
+<span class="nt">&lt;/style&gt;</span>
+
+<span class="c">&lt;!-- JavaScript --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;code-guide.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></div>
+  </div>
+</div>
+
+<div class="section" id="html-starter">
+  <div class="col-full">
+    <h3>HTML Starter</h3>
+    <p>Rechts findest du ein kleines Code Snippet für den Start. Das Snippet ist eine Zusammenfassung aus den oben genannten Empfehlungen und an das <a href="https://html5boilerplate.com/">HTML5 Boilerplate</a> angelehnt.</p>
+
+  </div>
+  <div class="col-full">
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">&quot;de-de&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">&quot;X-UA-Compatible&quot;</span> <span class="na">content=</span><span class="s">&quot;IE=edge&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Seitentitel<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=device-width, initial-scale=1&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;code-guide.css&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;header</span> <span class="na">role=</span><span class="s">&quot;banner&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;nav</span> <span class="na">role=</span><span class="s">&quot;navigation&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;ul&gt;</span>
+          <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>
+              Home
+            <span class="nt">&lt;/a&gt;</span>
+          <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+      <span class="nt">&lt;/nav&gt;</span>
+    <span class="nt">&lt;/header&gt;</span>
+
+    <span class="nt">&lt;section</span> <span class="na">role=</span><span class="s">&quot;main&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;article&gt;</span>
+        <span class="nt">&lt;header&gt;</span>
+          <span class="nt">&lt;h2&gt;</span>
+            Title
+          <span class="nt">&lt;/h2&gt;</span>
+        <span class="nt">&lt;/header&gt;</span>
+      <span class="nt">&lt;/article&gt;</span>
+    <span class="nt">&lt;/section&gt;</span>
+
+    <span class="nt">&lt;aside</span> <span class="na">role=</span><span class="s">&quot;complementary&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;p&gt;</span>
+        Sidebar here
+      <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/aside&gt;</span>
+    <span class="nt">&lt;footer</span> <span class="na">role=</span><span class="s">&quot;contentinfo&quot;</span><span class="nt">&gt;</span>
+      <span class="ni">&amp;copy;</span> Guave Interactive
+    <span class="nt">&lt;/footer&gt;</span>
+
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;js/yourscripts.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span></code></pre></div>
+  </div>
+</div>
+
+<div class="section" id="html-practicality">
+  <div class="col">
+    <h3>Praktisch vor Rein</h3>
+    <p>Bem&uuml;he dich, die HTML Standards und Semantik beizubehalten, aber nicht zum Preis von Praktikabilit&auml;t. Benutze so wenig Markup mit den wenigsten Komplexit&auml;ten, wie m&ouml;glich.</p>
+  </div>
+</div>
+
+<div class="heading" id="less">
+  <h2>LESS</h2>
+</div>
+
+<div class="section" id="css-syntax">
+  <div class="col">
+    <h3>Syntax</h3>
+    <ul>
+      <li>Benutze Soft-Tabs mit 2 Leerzeichen - es ist die einzige M&ouml;glichkeit zu garantieren, dass der Code in allen Umgebungen gleich gerendert wird.</li>
+      <li>Lasse beim gruppieren von Selektoren jedem Selektor seine eigene Zeile.</li>
+      <li>F&uuml;r bessere Lesbarkeit, f&uuml;ge ein Leerzeichen vor jeder &ouml;ffnenden Klammer eines Deklarationsblocks hinzu.</li>
+      <li>Platziere schlie&szlig;ende Klammern in einer neuen Zeile.</li>
+      <li>F&uuml;ge ein Leerzeichen hinter jedem <code>:</code> f&uuml;r jede Deklaration hinzu.</li>
+      <li>F&uuml;r ein genaueres Fehlerreporting sollte jede Deklaration in einer eigenen Zeile stehen.</li>
+      <li>Beende jede Deklaration mit einem Semikolon. F&uuml;r die letzte Deklaration ist dies optional, aber ohne ist der Code fehleranf&auml;lliger.</li>
+      <li>Kommagetrennte Eigenschaftswerte sollten ein Leerzeichen nach jedem Komma enthalten (z.B.<code>box-shadow</code>).</li>
+      <li>F&uuml;ge Eigenschaftswerten oder Farbwerten f&uuml;hrenden Nullen hinzu (z.B., <code>0.5</code> anstatt <code>.5</code> und <code>-0.5px</code> anstatt <code>-.5px</code>).</li>
+      <li>Schreibe Hexwerte klein, z.B. <code>#ffffff</code>. Kleingeschriebene Buchstaben sind beim Lesen eines Dokumentes einfacher zu unterscheiden, da sie mehr einzigartige Formen aufweisen.</li>
+      <li>Verwende ausgeschriebene Hexwerte, wenn m&ouml;glich. Z.B. <code>#ffffff</code> anstatt <code>#fff</code>.</li>
+      <li>Setze Attributwerte in Anf&uuml;hrungszeichen, z.B. <code>input[type="text"]</code>. <a href="http://mathiasbynens.be/notes/unquoted-attribute-values#css">Sie sind nur in einigen F&auml;llen optional</a> und es ist eine Gew&ouml;hnung an Konsistenz.</li>
+      <li>Vermeide das Setzen von Einheiten f&uuml;r Nullwerte, z.B. <code>margin: 0;</code> anstatt <code>margin: 0px;</code>.</li>
+    </ul>
+    <p>Fragen bez&uuml;glich den hier verwendeten Begriffen? Weitere Informationen gibt es im <a href="http://de.wikipedia.org/wiki/Cascading_Style_Sheets#Syntax">Syntax Abschnitt des Cascading Style Sheet Artikels</a> auf Wikipedia.</p> 
+  </div>
+  <div class="col">
+    <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* Schlechtes LESS */</span>
+<span class="nc">.selector</span><span class="o">,</span> <span class="nc">.selector-secondary</span><span class="o">,</span> <span class="nc">.selector</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">text</span><span class="o">]</span> <span class="p">{</span>
+  <span class="k">padding</span><span class="o">:</span><span class="m">15px</span><span class="p">;</span>
+  <span class="k">margin</span><span class="o">:</span><span class="m">0px</span> <span class="m">0px</span> <span class="m">15px</span><span class="p">;</span>
+  <span class="k">background-color</span><span class="o">:</span><span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,.</span><span class="m">5</span><span class="p">);</span>
+  <span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span><span class="m">0px</span> <span class="m">1px</span> <span class="m">2px</span> <span class="m">#CCC</span><span class="o">,</span><span class="k">inset</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">0</span> <span class="m">#FFFFFF</span>
+<span class="p">}</span>
+
+<span class="c">/* Gutes LESS */</span>
+<span class="nc">.selector</span><span class="o">,</span>
+<span class="nc">.selector-secondary</span><span class="o">,</span>
+<span class="nc">.selector</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="o">]</span> <span class="p">{</span>
+  <span class="k">padding</span><span class="o">:</span> <span class="m">15px</span><span class="p">;</span>
+  <span class="k">margin-bottom</span><span class="o">:</span> <span class="m">15px</span><span class="p">;</span>
+  <span class="k">background-color</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">.</span><span class="m">5</span><span class="p">);</span>
+  <span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">2px</span> <span class="m">#ccc</span><span class="o">,</span> <span class="k">inset</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">0</span> <span class="m">#fff</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+  </div>
+</div>
+
+<div class="section" id="css-media-queries">
+  <div class="col">
+    <h3>Platzierung von Media Queries</h3>
+    <p>Medienabfragen sollten so nahe wie m&ouml;glich an den f&uuml;r sie relevanten Regeln platziert werden. B&uuml;ndle sie nicht alle in einem separaten Stylesheet oder am Ende des Dokuments, andernfalls ist es einfach f&uuml;r andere, sie in Zukunft zu &uuml;bersehen. Hier ist eine typische Deklaration.</p>
+  </div>
+  <div class="col">
+    <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.element</span> <span class="p">{</span>
+  <span class="k">margin</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+
+  <span class="o">@</span><span class="n">media</span> <span class="p">(</span><span class="k">min-width</span><span class="o">:</span> <span class="m">480px</span><span class="p">)</span> <span class="err">{</span>
+    <span class="k">margin</span><span class="o">:</span> <span class="m">5</span><span class="n">rem</span> <span class="m">0</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="err">}</span></code></pre></div>
+  </div>
+</div>
+
+<div class="section" id="css-single-declarations">
+  <div class="col">
+    <h3>Einfache Deklarationen</h3>
+    <p>
+      Jede Deklaration erhält eine neue Zeile.
+    </p>
+    <p>Der Punkt ist hier Fehlererkennung - z.B. ein CSS Validator, der aussagt, dass ein Syntax Error in Zeile 183 vorliegt. Mit einer einzigen Deklaration kann man ihn nicht verfehlen. Bei vielen Deklarationen sind separate Zeilen ein Muss.</p>
+  </div>
+  <div class="col">
+    <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* Einzelne Deklarationen in einer Zeile */</span>
+<span class="nc">.span1</span> <span class="p">{</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">60px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.span2</span> <span class="p">{</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">140px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.span3</span> <span class="p">{</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">220px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* Mehrere Deklarationen; eine pro Zeile */</span>
+<span class="nc">.sprite</span> <span class="p">{</span>
+  <span class="k">display</span><span class="o">:</span> <span class="k">inline</span><span class="o">-</span><span class="k">block</span><span class="p">;</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">16px</span><span class="p">;</span>
+  <span class="k">height</span><span class="o">:</span> <span class="m">15px</span><span class="p">;</span>
+  <span class="k">background-image</span><span class="o">:</span> <span class="sx">url(../img/sprite.png)</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+  </div>
+</div>
+
+<div class="section" id="css-shorthand">
+  <div class="col">
+    <h3>Kurznotation</h3>
+    <p>Bem&uuml;he dich, Kurznotationen nur in den F&auml;llen zu benutzen, wo alle verf&uuml;gbaren Werte explizit gesetzt werden m&uuml;ssen. &Uuml;berm&auml;&szlig;ig benutzte Eigenschaften sind beispielsweise:</p>
+    <ul>
+      <li><code>padding</code></li>
+      <li><code>margin</code></li>
+      <li><code>font</code></li>
+      <li><code>background</code></li>
+      <li><code>border</code></li>
+      <li><code>border-radius</code></li>
+    </ul>
+    <p>Oft m&uuml;ssen nicht alle Werte gesetzt werden, die eine Kurznotation repr&auml;sentiert. Zum Beispiel setzen HTML &Uuml;berschriften nur den oberen und unteren margin, also m&uuml;ssen nur diese beiden Werte &uuml;berschrieben werden, wenn es notwendig ist. Ausschweifende Benutzung von Kurznotation in Eigenschaften f&uuml;hrt oft zu schlampigem Code mit unn&ouml;tigen &Uuml;berschreibungen und ungewollten Nebeneffekten.</p>
+    <p>Im Mozilla Entwicklernetzwerk gibt es einen gro&szlig;artigen Artikel &uuml;ber <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties">Kurznotationen f&uuml;r Eigenschaften</a> f&uuml;r diejenigen, die mit Notationen und deren Verhalten nicht vertraut sind.</p>
+  </div>
+  <div class="col">
+    <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* Schlechets Beispiel */</span>
+<span class="nc">.element</span> <span class="p">{</span>
+  <span class="k">margin</span><span class="o">:</span> <span class="m">0</span> <span class="m">0</span> <span class="m">10px</span><span class="p">;</span>
+  <span class="k">background</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
+  <span class="k">background</span><span class="o">:</span> <span class="sx">url(&quot;image.jpg&quot;)</span><span class="p">;</span>
+  <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">3px</span> <span class="m">3px</span> <span class="m">0</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* Gutes Beispiel */</span>
+<span class="nc">.element</span> <span class="p">{</span>
+  <span class="k">margin-bottom</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
+  <span class="k">background-color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
+  <span class="k">background-image</span><span class="o">:</span> <span class="sx">url(&quot;image.jpg&quot;)</span><span class="p">;</span>
+  <span class="k">border-top</span><span class="o">-</span><span class="k">left</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">3px</span><span class="p">;</span>
+  <span class="k">border-top</span><span class="o">-</span><span class="k">right</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">3px</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+  </div>
+</div>
+
+<div class="section" id="css-nesting">
+  <div class="col">
+    <h3>Verschachtelung in Less und Sass</h3>
+    <p>Vermeide unn&ouml;tige Verschachtelungen. Nur weil verschachtelt werden kann, hei&szlig;t das nicht, dass man es immer sollte. Ber&uuml;cksichtige Verschachtelung nur, wenn Styles im Elternelement g&uuml;ltig sein m&uuml;ssen und wenn mehrere Elemente zu verschachteln sind.</p>
+  </div>
+  <div class="col">
+    <div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// Ohne Schachtelung</span>
+<span class="nc">.table</span> <span class="o">&gt;</span> <span class="nt">thead</span> <span class="o">&gt;</span> <span class="nt">tr</span> <span class="o">&gt;</span> <span class="nt">th</span> <span class="p">{</span> <span class="err">…</span> <span class="p">}</span>
+<span class="nc">.table</span> <span class="o">&gt;</span> <span class="nt">thead</span> <span class="o">&gt;</span> <span class="nt">tr</span> <span class="o">&gt;</span> <span class="nt">td</span> <span class="p">{</span> <span class="err">…</span> <span class="p">}</span>
+
+<span class="c1">// Mit Schachtelung</span>
+<span class="nc">.table</span> <span class="o">&gt;</span> <span class="nt">thead</span> <span class="o">&gt;</span> <span class="nt">tr</span> <span class="p">{</span>
+  <span class="o">&gt;</span> <span class="nt">th</span> <span class="p">{</span> <span class="err">…</span> <span class="p">}</span>
+  <span class="o">&gt;</span> <span class="nt">td</span> <span class="p">{</span> <span class="err">…</span> <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+  </div>
+</div>
+
+<div class="section" id="css-classes">
+  <div class="col">
+    <h3>Klassennamen</h3>
+    <ul>
+      <li>Schreibe Klassennamen in Kleinbuchstaben und benutze Bindestriche (keine Unterstriche oder camelCase). Bindestriche dienen als nat&uuml;rliche Unterbrechungen in verbundenen Klassen (z.B. <code>.btn</code> und <code>.btn-danger</code>).</li>
+      <li>
+        Klassennamen werden immer Englisch ausgegeben.
+      </li>
+      <li>Vermeide ausschweifende und beliebige Kurznotationen. <code>.btn</code> ist eine n&uuml;tzliche Abk&uuml;rzung f&uuml;r <em>button</em>, aber <code>.s</code> ist bedeutungslos.</li>
+      <li>Benenne Klassen so kurz und b&uuml;ndig wie m&ouml;glich.</li>
+      <li>Benutze aussagekr&auml;ftige Namen; benutze zweck- oder strukturgebundene Namen, anstatt toll klingende.</li>
+    </ul>
+    <p>Au&szlig;erdem ist es hilfreich, viele dieser Regeln beizubehalten, wenn Sass und Less Variablennamen erstellt werden.</p>
+  </div>
+  <div class="col">
+    <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* Schlechtes Beispiel */</span>
+<span class="nc">.t</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<span class="nc">.red</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<span class="nc">.header</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+
+<span class="c">/* Gutes Beispiel */</span>
+<span class="nc">.tweet</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<span class="nc">.important</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<span class="nc">.tweet-header</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span></code></pre></div>
+  </div>
+</div>
+
+<div class="section" id="css-selectors">
+  <div class="col">
+    <h3>Selektoren</h3>
+    <ul>
+      <li>Benutze Klassen anstatt generische Element-Tags, um eine optimale Renderingperformance zu erreichen.</li>
+      <li>Vermeide mehrere Attributselektoren (z.B. <code>[class^="..."]</code>) bei  gew&ouml;hnlich verwendeten Komponenten. Es ist bekannt, dass die Browserperformance dadurch beeintr&auml;chtigt wird.</li>
+      <li>Halte Selektoren kurz und versuche die Anzahl der Elemente in jedem Selektor auf drei zu begrenzen.</li>
+      <li>Setze den Geltungsrahmen zum n&auml;chsten Elterntag <strong>nur</strong> wenn n&ouml;tig (z.B. wenn keine Pr&auml;fixklassen verwendet werden).</li>
+    </ul>
+    <p>Weitere informationen:</p>
+    <ul>
+      <li><a href="http://markdotto.com/2012/02/16/scope-css-classes-with-prefixes/">Geltungsrahmen von CSS Pr&auml;fixklassen</a></li>
+      <li><a href="http://markdotto.com/2012/03/02/stop-the-cascade/">Stopp das Verschachteln</a></li>
+    </ul>
+  </div>
+  <div class="col">
+    <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* Schlechtes Beispiel */</span>
+<span class="nt">span</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<span class="nc">.page-container</span> <span class="nf">#stream</span> <span class="nc">.stream-item</span> <span class="nc">.tweet</span> <span class="nc">.tweet-header</span> <span class="nc">.username</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<span class="nc">.avatar</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+
+<span class="c">/* Gutes Beispiel */</span>
+<span class="nc">.avatar</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<span class="nc">.tweet-header</span> <span class="nc">.username</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<span class="nc">.tweet</span> <span class="nc">.avatar</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span></code></pre></div>
+  </div>
+</div>
+
+<div class="section" id="css-organization">
+  <div class="col">
+    <h3>Aufbau TBD</h3>
+    <ul>
+      <li>Ordne Codesektionen nach Komponenten an.</li>
+      <li>Entwickle eine konsistente Kommentierungshierarchie.</li>
+      <li>Benutze konsistente Leerzeichen zu deinem Vorteil, wenn einzelne Sektionen in einem gr&ouml;&szlig;eren Dokument voneinander getrennt werden.</li>
+      <li>Wenn mehrere CSS Dateien verwendet werden, teile sie nach Komponenten, anstatt Seiten auf. Seiten k&ouml;nnen neu angeordnet und Komponenten verschoben werden.</li>
+    </ul>
+  </div>
+  <div class="col">
+    <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/*</span>
+<span class="c"> * Komponentensektion Ueberschrift</span>
+<span class="c"> */</span>
+
+<span class="nc">.element</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+
+
+<span class="c">/*</span>
+<span class="c"> * Komponentensektion &amp;Uuml;berschrift</span>
+<span class="c"> *</span>
+<span class="c"> * Manchmal muss optionaler Kontext fuer die gesamte Komponente eingefuegt werden. Mache es so wie hier, wenn es wichtig ist.</span>
+<span class="c"> */</span>
+
+<span class="nc">.element</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+
+<span class="c">/* Kontextuelle Subkomponente oder Attribut */</span>
+<span class="nc">.element-heading</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span></code></pre></div>
+  </div>
+</div>
+
+<div class="section" id="css-editor-prefs">
+  <div class="col">
+    <h3>Editor Einstellungen</h3>
+    <p>Stelle deinen Editor folgenderma&szlig;en ein, um verbreitete Inkonsistenzen und dirty diffs zu vermeiden:</p>
+    <ul>
+      <li>Benutze Soft-Tabs mit zwei Leerzeichen</li>
+      <li>Schneide nachlaufende Leerzeichen beim Speichern ab.</li>
+      <li>Aktiviere UTF-8 codierung.</li>
+      <li>F&uuml;ge am Ende der Datei eine Leerzeile hinzu.</li>
+    </ul>
+    <p>Ziehe in Erw&auml;gung, diese Einstellungen in die <code>.editorconfig</code>-Datei deines Projektes zu schreiben. F&uuml;r ein Beispiel, <a href="https://github.com/twbs/bootstrap/blob/master/.editorconfig">schaue dir diese Datei in Bootstrap an</a>. Mehr <a href="http://editorconfig.org">&uuml;ber EditorConfig erfahren</a>.</p>
+  </div>
+</div>
+
+
+    <footer class="footer">
+  <p>&lt;3</p>
+  <p>Zu gro&szlig;en Teilen inspiriert von <a href="https://github.com/necolas/idiomatic-css">Idiomatic CSS</a> und dem <a href="http://github.com/styleguide">GitHub Styleguide</a>. Made with all the love in the world by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+  <p>Open Sourced unter MIT Lizenz. Copyright 2015 <a href="https://twitter.com/mdo">@mdo</a>.</p>
+    <p>&Uuml;bersetzt von <a href="https://github.com/BackendButters">BackendButters</a>. <a href="http://codeguide.co/">Originalversion.</a> <a href="https://github.com/BackendButters/code-guide">Diese Version auf GitHub.</a></p>
+  </footer>
+
+  </body>
+</html>
